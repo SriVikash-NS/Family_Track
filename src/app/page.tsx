@@ -9,7 +9,6 @@ import {
   Zap,
   Users,
   ArrowRight,
-  Sparkles,
   CheckCircle,
   EyeOff,
   Clock,
@@ -19,6 +18,7 @@ import {
   Heart,
   ChevronRight,
   Play,
+  LogIn,
 } from 'lucide-react';
 import { ActiveJourneyModal } from '@/components/ActiveJourneyModal';
 
@@ -32,7 +32,7 @@ export default function LandingPage() {
       <div className="absolute top-1/3 -left-48 w-96 h-96 bg-emerald-500/10 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute top-2/3 -right-48 w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl pointer-events-none" />
 
-      {/* Navigation Bar */}
+      {/* Top Navigation Bar */}
       <nav className="sticky top-0 z-30 bg-slate-950/80 backdrop-blur-xl border-b border-slate-800/80 px-6 py-4">
         <div className="max-w-7xl mx-auto flex items-center justify-between">
           <Link href="/" className="flex items-center gap-3 group">
@@ -46,24 +46,34 @@ export default function LandingPage() {
             </span>
           </Link>
 
+          {/* Navigation Links */}
           <div className="hidden md:flex items-center gap-8 text-sm font-medium text-slate-300">
+            <Link href="/" className="text-emerald-400 font-semibold">
+              Home
+            </Link>
             <a href="#features" className="hover:text-emerald-400 transition-colors">
               Features
             </a>
             <a href="#privacy" className="hover:text-emerald-400 transition-colors">
-              Privacy First
+              Privacy
             </a>
             <a href="#how-it-works" className="hover:text-emerald-400 transition-colors">
-              How it Works
-            </a>
-            <a href="#testimonials" className="hover:text-emerald-400 transition-colors">
-              Trust & Safety
+              How It Works
             </a>
           </div>
 
+          {/* Action Buttons */}
           <div className="flex items-center gap-3">
             <Link
-              href="/dashboard"
+              href="/login"
+              className="px-4 py-2 rounded-xl text-slate-300 hover:text-white hover:bg-slate-900 transition-colors text-sm font-semibold flex items-center gap-1.5"
+            >
+              <LogIn className="w-4 h-4 text-emerald-400" />
+              <span>Login</span>
+            </Link>
+
+            <Link
+              href="/signup"
               className="px-5 py-2.5 rounded-xl bg-gradient-to-r from-emerald-500 to-cyan-400 hover:from-emerald-400 hover:to-cyan-300 text-slate-950 font-bold text-sm transition-all shadow-lg shadow-emerald-500/20 active:scale-95 flex items-center gap-2"
             >
               <span>Get Started</span>
@@ -77,10 +87,10 @@ export default function LandingPage() {
       <section className="relative pt-16 pb-24 px-6 max-w-7xl mx-auto w-full flex flex-col items-center text-center">
         <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-emerald-500/10 text-emerald-400 text-xs font-semibold border border-emerald-500/20 mb-8 animate-float">
           <ShieldCheck className="w-4 h-4 text-emerald-400" />
-          <span>The Zero-Surveillance Family App</span>
+          <span>Consent-Based Family Journey Application</span>
         </div>
 
-        {/* Heading & Subtitle */}
+        {/* Headline & Short Explanation */}
         <h1 className="text-4xl sm:text-6xl md:text-7xl font-extrabold tracking-tight text-white max-w-4xl leading-[1.1] mb-6">
           Track the journey,{' '}
           <span className="bg-gradient-to-r from-emerald-400 via-teal-300 to-cyan-400 bg-clip-text text-transparent">
@@ -89,29 +99,29 @@ export default function LandingPage() {
         </h1>
 
         <p className="text-lg sm:text-xl text-slate-300 max-w-2xl font-normal leading-relaxed mb-10">
-          Stay connected with your family while keeping everyday movement private.
+          Stay connected with your family while keeping everyday movement private. Start location tracking manually before travel, and stop when you arrive.
         </p>
 
         {/* Buttons */}
         <div className="flex flex-col sm:flex-row items-center gap-4 mb-16 w-full sm:w-auto">
           <Link
-            href="/dashboard"
+            href="/signup"
             className="w-full sm:w-auto px-8 py-4 rounded-2xl bg-gradient-to-r from-emerald-500 to-cyan-400 hover:from-emerald-400 hover:to-cyan-300 text-slate-950 font-extrabold text-base shadow-xl shadow-emerald-500/25 transition-all active:scale-95 flex items-center justify-center gap-2"
           >
             <span>Get Started</span>
             <ArrowRight className="w-5 h-5" />
           </Link>
 
-          <a
-            href="#features"
+          <Link
+            href="/login"
             className="w-full sm:w-auto px-8 py-4 rounded-2xl bg-slate-900/80 hover:bg-slate-800 text-slate-200 font-bold text-base border border-slate-700/80 transition-all flex items-center justify-center gap-2"
           >
-            <span>Explore Features</span>
+            <span>Login</span>
             <ChevronRight className="w-5 h-5 text-slate-400" />
-          </a>
+          </Link>
         </div>
 
-        {/* Hero Interactive Preview Card */}
+        {/* Dashboard Product Preview Mockup */}
         <div className="w-full max-w-4xl glass-panel rounded-3xl p-6 sm:p-8 relative overflow-hidden text-left border border-slate-700/80 shadow-2xl">
           <div className="absolute top-0 right-0 p-8 w-64 h-64 bg-emerald-500/10 rounded-full blur-3xl pointer-events-none" />
 
@@ -120,7 +130,7 @@ export default function LandingPage() {
               <div className="w-3 h-3 rounded-full bg-emerald-400 animate-ping" />
               <div>
                 <span className="text-xs font-semibold text-emerald-400 uppercase tracking-wider block">
-                  Live Simulated Tracking
+                  Interactive Product Demo
                 </span>
                 <h3 className="text-lg font-bold text-white">
                   Marcus Rivera • Morning School Bus Route
@@ -133,7 +143,7 @@ export default function LandingPage() {
               className="px-4 py-2 rounded-xl bg-emerald-500/10 hover:bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 text-xs font-semibold flex items-center gap-2 transition-all"
             >
               <Play className="w-3.5 h-3.5 fill-emerald-400" />
-              <span>Try Live Tracker Demo</span>
+              <span>Try Interactive Tracker Demo</span>
             </button>
           </div>
 
@@ -142,7 +152,7 @@ export default function LandingPage() {
               <span className="text-xs text-slate-400 block mb-1">Distance Logged</span>
               <span className="text-2xl font-extrabold text-white">12.4 km</span>
               <span className="text-[11px] text-emerald-400 block mt-1">
-                Active • 4 mins ago
+                Active Journey
               </span>
             </div>
 
@@ -152,29 +162,73 @@ export default function LandingPage() {
                 <ShieldCheck className="w-5 h-5 text-emerald-400" /> Shared
               </span>
               <span className="text-[11px] text-slate-400 block mt-1">
-                Auto-deletes in 7 days
+                Visible during active trip
               </span>
             </div>
 
             <div className="p-4 rounded-2xl bg-slate-950/60 border border-slate-800/80">
-              <span className="text-xs text-slate-400 block mb-1">ETA & Arrival</span>
-              <span className="text-2xl font-extrabold text-cyan-400">08:45 AM</span>
+              <span className="text-xs text-slate-400 block mb-1">Destination</span>
+              <span className="text-2xl font-extrabold text-cyan-400">School Zone</span>
               <span className="text-[11px] text-slate-400 block mt-1">
-                Lincoln High School
+                Tracking can be stopped manually when you arrive.
               </span>
             </div>
           </div>
         </div>
       </section>
 
+      {/* How It Works Section */}
+      <section id="how-it-works" className="py-20 px-6 max-w-7xl mx-auto w-full border-t border-slate-800/80">
+        <div className="text-center max-w-3xl mx-auto mb-16">
+          <h2 className="text-3xl sm:text-4xl font-extrabold text-white mb-4">
+            How FamilyTrack Works
+          </h2>
+          <p className="text-slate-400 text-base">
+            Explicit journey tracking in 3 simple steps without background surveillance.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="glass-panel rounded-3xl p-8 border border-slate-800 text-center space-y-4">
+            <div className="w-12 h-12 rounded-2xl bg-emerald-500/10 text-emerald-400 font-extrabold text-lg flex items-center justify-center mx-auto border border-emerald-500/20">
+              1
+            </div>
+            <h3 className="text-lg font-bold text-white">Start Your Journey</h3>
+            <p className="text-xs text-slate-400 leading-relaxed">
+              Tap "Start Journey" before commuting or walking. GPS recording begins only after your explicit confirmation.
+            </p>
+          </div>
+
+          <div className="glass-panel rounded-3xl p-8 border border-slate-800 text-center space-y-4">
+            <div className="w-12 h-12 rounded-2xl bg-cyan-500/10 text-cyan-400 font-extrabold text-lg flex items-center justify-center mx-auto border border-cyan-500/20">
+              2
+            </div>
+            <h3 className="text-lg font-bold text-white">Share Live Status</h3>
+            <p className="text-xs text-slate-400 leading-relaxed">
+              Family circle members can view your live progress, speed, and route polyline while travel is active.
+            </p>
+          </div>
+
+          <div className="glass-panel rounded-3xl p-8 border border-slate-800 text-center space-y-4">
+            <div className="w-12 h-12 rounded-2xl bg-purple-500/10 text-purple-400 font-extrabold text-lg flex items-center justify-center mx-auto border border-purple-500/20">
+              3
+            </div>
+            <h3 className="text-lg font-bold text-white">Stop & Save</h3>
+            <p className="text-xs text-slate-400 leading-relaxed">
+              Tracking can be stopped manually when you arrive. Your location instantly becomes private again.
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* Privacy Comparison Section */}
-      <section id="privacy" className="py-20 px-6 max-w-7xl mx-auto w-full">
+      <section id="privacy" className="py-20 px-6 max-w-7xl mx-auto w-full border-t border-slate-800/80">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <h2 className="text-3xl sm:text-4xl font-extrabold text-white mb-4">
             Why Journey-First Tracking?
           </h2>
           <p className="text-slate-400 text-base">
-            Traditional tracking apps monitor every single step 24/7 without consent. FamilyTrack puts complete control back in your hands.
+            Traditional tracking apps monitor location 24/7 without consent. FamilyTrack puts complete control back in your hands.
           </p>
         </div>
 
@@ -196,23 +250,17 @@ export default function LandingPage() {
               </li>
               <li className="flex items-start gap-3">
                 <span className="text-rose-400 text-lg font-bold">✕</span>
-                <span>Drains phone battery constantly running in the background.</span>
+                <span>Creates uncomfortable feelings of continuous monitoring.</span>
               </li>
               <li className="flex items-start gap-3">
                 <span className="text-rose-400 text-lg font-bold">✕</span>
-                <span>Creates uncomfortable feelings of being watched.</span>
-              </li>
-              <li className="flex items-start gap-3">
-                <span className="text-rose-400 text-lg font-bold">✕</span>
-                <span>Stores location logs forever on centralized servers.</span>
+                <span>Stores unneeded stationary location data indefinitely.</span>
               </li>
             </ul>
           </div>
 
           {/* FamilyTrack Philosophy */}
           <div className="glass-panel rounded-3xl p-8 border border-emerald-500/30 bg-gradient-to-b from-slate-900/80 to-emerald-950/20 relative overflow-hidden">
-            <div className="absolute -top-10 -right-10 w-32 h-32 bg-emerald-500/20 rounded-full blur-3xl pointer-events-none" />
-
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-400 text-xs font-semibold mb-6">
               <ShieldCheck className="w-4 h-4" /> FamilyTrack Approach
             </div>
@@ -232,11 +280,7 @@ export default function LandingPage() {
               </li>
               <li className="flex items-start gap-3">
                 <CheckCircle className="w-5 h-5 text-emerald-400 shrink-0 mt-0.5" />
-                <span>Fosters mutual trust, peace of mind, and respect for independence.</span>
-              </li>
-              <li className="flex items-start gap-3">
-                <CheckCircle className="w-5 h-5 text-emerald-400 shrink-0 mt-0.5" />
-                <span>Ephemeral history retention with one-click data wipe options.</span>
+                <span>Tracking can be stopped manually when you arrive at your destination.</span>
               </li>
             </ul>
           </div>
@@ -258,12 +302,12 @@ export default function LandingPage() {
           {[
             {
               title: 'One-Tap Manual Start',
-              desc: 'Tap Start Journey before commuting or walking home. Tracking stops automatically upon arrival.',
+              desc: 'Tap Start Journey before commuting. Tracking can be stopped manually when you arrive.',
               icon: Navigation,
             },
             {
               title: 'Arrival & Departure Pings',
-              desc: 'Family members get instant notifications when you reach school, office, or home.',
+              desc: 'Family members get check-in notifications during active trips.',
               icon: BellRing,
             },
             {
@@ -273,17 +317,17 @@ export default function LandingPage() {
             },
             {
               title: 'Route & Travel Analytics',
-              desc: 'View daily travel time, distances, carbon offset, and safety scores.',
+              desc: 'View daily travel time, distances, and safety scores.',
               icon: Zap,
             },
             {
               title: 'Family Geofence Circles',
-              desc: 'Set virtual boundaries for places like Home, School, and Gym for quick automated check-ins.',
+              desc: 'Set virtual boundaries for places like Home, School, and Gym.',
               icon: MapPin,
             },
             {
-              title: 'Battery-Efficient Design',
-              desc: 'Conserves 85% more battery than background location-sharing apps.',
+              title: 'Consent-First Architecture',
+              desc: 'Zero background location tracking when no journey is active.',
               icon: Heart,
             },
           ].map((feat, idx) => {
@@ -306,28 +350,6 @@ export default function LandingPage() {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-20 px-6 max-w-7xl mx-auto w-full">
-        <div className="glass-panel rounded-3xl p-10 sm:p-16 text-center relative overflow-hidden border border-emerald-500/30 bg-gradient-to-b from-slate-900 to-emerald-950/40">
-          <div className="max-w-2xl mx-auto space-y-6">
-            <h2 className="text-3xl sm:text-5xl font-extrabold text-white tracking-tight">
-              Ready to experience privacy-first family tracking?
-            </h2>
-            <p className="text-slate-300 text-base">
-              Try the interactive FamilyTrack dashboard today. No credit card or setup required.
-            </p>
-
-            <Link
-              href="/dashboard"
-              className="inline-flex items-center justify-center px-8 py-4 rounded-2xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-extrabold text-base shadow-xl shadow-emerald-500/25 transition-all active:scale-95 gap-2"
-            >
-              <span>Explore Dashboard</span>
-              <ArrowRight className="w-5 h-5" />
-            </Link>
-          </div>
-        </div>
-      </section>
-
       {/* Footer */}
       <footer className="mt-auto border-t border-slate-800/80 py-8 px-6 bg-slate-950 text-xs text-slate-500">
         <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
@@ -338,11 +360,14 @@ export default function LandingPage() {
           </div>
 
           <div className="flex items-center gap-6">
+            <Link href="/login" className="hover:text-emerald-400">
+              Login
+            </Link>
+            <Link href="/signup" className="hover:text-emerald-400">
+              Sign Up
+            </Link>
             <Link href="/dashboard" className="hover:text-emerald-400">
               Dashboard
-            </Link>
-            <Link href="/journeys" className="hover:text-emerald-400">
-              Journeys
             </Link>
             <Link href="/settings" className="hover:text-emerald-400">
               Privacy Settings
@@ -351,7 +376,7 @@ export default function LandingPage() {
         </div>
       </footer>
 
-      {/* Interactive Demo Modal Triggered from Landing */}
+      {/* Interactive Demo Modal */}
       <ActiveJourneyModal
         isOpen={isDemoModalOpen}
         onClose={() => setIsDemoModalOpen(false)}
